@@ -48,14 +48,19 @@ This history to me is just as valuable as the message content itself, but there 
     cargo run --release
     ```
     In case you need it, you can find the resulting binary at `./target/release/BigBrother`
-#### NixOS
-Add flake:
+#### Nix
+Add flake to inputs:
 ```nix
-
+bigbrother.url = "github:Milkshiift/BigBrother-bot";
 ```
 Enable service:
 ```nix
-
+services.bigbrother = {
+    enable = true;
+    token = "your_bot_token";
+    # Example config
+    # settings.storage.autoflushInterval = 60000;
+};
 ```
 
 ### Configuration
