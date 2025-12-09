@@ -1,0 +1,41 @@
+[package]
+name = "BigBrother"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.48.0", features = ["macros", "signal"] }
+serde = "1.0.228"
+sonic-rs = "0.5.6"
+twilight-model = { version = "0.17.0" }
+twilight-gateway = { version = "0.17.0", features = ["simd-json", "zstd"] }
+twilight-cache-inmemory = { version = "0.17.0" }
+twilight-http = { version = "0.17.0", default-features = false, features = ["rustls-native-roots", "decompression", "simd-json", "hickory"] }
+reqwest = { version = "0.12.25", default-features = false, features = ["http3", "rustls-tls-native-roots", "stream", "hickory-dns"] }
+anyhow = "1.0.100"
+thiserror = "2.0.17"
+tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
+tracing-appender = "0.2.4"
+tracing = "0.1.43"
+figment = { version = "0.10.19", features = ["toml", "env"] }
+toml = "0.9.8"
+itoa = "1.0.15"
+futures-util = "0.3.31"
+snmalloc-rs = "0.3.8"
+
+[profile.dev]
+opt-level = 1
+overflow-checks = false
+debug-assertions = false
+incremental = true
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
