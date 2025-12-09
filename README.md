@@ -22,8 +22,6 @@ This history to me is just as valuable as the message content itself, but there 
 <img align="center" src="extras/bbDemo.webp" alt="Demo">
 </div>
 
----
-
 ## ✨ Key Features
 
 *   **⏪ Catchup**: Automatically fetches unsynced data from bot downtime.
@@ -32,8 +30,6 @@ This history to me is just as valuable as the message content itself, but there 
 *   **📄 Append Log**: Data is *never* deleted or overwritten.
 *   **⚡ High Performance**: Your internet connection and storage I/O are the bottleneck, never the bot.
 *   **🛡️ Reliable**: Built like failure is not an option. See [RELIABILITY.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md).
-
----
 
 ## 🚀 Getting Started
 
@@ -87,12 +83,8 @@ Big Brother is configured via `config.toml` or Environment Variables.
 You can find option descriptions [here](https://github.com/Milkshiift/BigBrother-bot/blob/main/src/settings.rs#L28).    
 Config changes will not take effect until restart.
 
----
-
 ## 🗄️ Data Storage
 See [DATA.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md)
-
----
 
 ## Why is there no development history?
 The development of this project took place in a private repository over the course of ~1.5 years with more than 200 commits.
