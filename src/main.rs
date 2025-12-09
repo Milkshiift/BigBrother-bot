@@ -23,8 +23,11 @@ use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::time::Duration;
 use tokio::sync::mpsc;
 use tokio::sync::mpsc::Sender;
-use tracing::{error, info, instrument, warn};
+use tracing::{error, info, instrument, warn, Event as TracingEvent, Subscriber};
 use tracing_appender::non_blocking;
+use tracing_subscriber::fmt::format::{FormatEvent, FormatFields};
+use tracing_subscriber::fmt::FmtContext;
+use tracing_subscriber::registry::LookupSpan;
 use tracing_subscriber::{EnvFilter, FmtSubscriber};
 use twilight_cache_inmemory::{DefaultInMemoryCache, InMemoryCache, ResourceType};
 use twilight_gateway::{Event, EventTypeFlags, Intents, Shard, ShardId, StreamExt as _};
@@ -99,15 +102,59 @@ impl State {
 	}
 }
 
+struct SimpleFormatter {
+	timer: HumanUptime,
+}
+
+impl<S, N> FormatEvent<S, N> for SimpleFormatter
+where
+	S: Subscriber + for<'a> LookupSpan<'a>,
+	N: for<'a> FormatFields<'a> + 'static,
+{
+	fn format_event(
+		&self,
+		_ctx: &FmtContext<'_, S, N>,
+		mut writer: tracing_subscriber::fmt::format::Writer<'_>,
+		event: &TracingEvent<'_>,
+	) -> std::fmt::Result {
+		use tracing_subscriber::fmt::time::FormatTime;
+
+		self.timer.format_time(&mut writer)?;
+		write!(writer, "  {} ", event.metadata().level())?;
+
+		let mut visitor = MessageOnlyVisitor {
+			writer: &mut writer,
+			result: Ok(()),
+		};
+		event.record(&mut visitor);
+		visitor.result?;
+
+		writeln!(writer)
+	}
+}
+
+struct MessageOnlyVisitor<'a, W> {
+	writer: &'a mut W,
+	result: std::fmt::Result,
+}
+
+impl<'a, W: std::fmt::Write> tracing::field::Visit for MessageOnlyVisitor<'a, W> {
+	fn record_debug(&mut self, field: &tracing::field::Field, value: &dyn std::fmt::Debug) {
+		if field.name() == "message" {
+			self.result = write!(self.writer, "{value:?}");
+		}
+	}
+}
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
 	let (non_blocking_writer, _guard) = non_blocking(std::io::stdout());
 	tracing::subscriber::set_global_default(
 		FmtSubscriber::builder()
 			.with_env_filter(EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info")))
-			.compact()
-			.with_target(false)
-			.with_timer(HumanUptime::new())
+			.event_format(SimpleFormatter {
+				timer: HumanUptime::new(),
+			})
 			.with_writer(non_blocking_writer)
 			.finish(),
 	)

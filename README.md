@@ -1,13 +1,16 @@
-# BigBrother 👁️
-
-[![Rust](https://img.shields.io/badge/Rust-lang-000000.svg?style=flat&logo=rust)](https://www.rust-lang.org/)
-[![Twilight](https://badgen.net/static/built%20with/twilight/cyan?icon=discord)](https://github.com/twilight-rs/twilight)
-[![Twilight](https://badgen.net/static/license/PolyForm%20Noncommercial/green)](https://polyformproject.org/licenses/noncommercial/1.0.0/)
+<h1 align="center">BigBrother 👁️</h1>
 
 <p align="center">
-  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/DATA.md">Data Storage Docs</a> •
-  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/RELIABILITY.md">Reliability Docs</a>
+  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md">Data Storage Docs</a> •
+  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md">Reliability Docs</a>
 </p>
+<div align="center">
+<a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/Rust-lang-000000.svg?style=flat&logo=rust" alt="Rust lang" /></a>
+<a href="https://github.com/twilight-rs/twilight"><img src="https://badgen.net/static/built%20with/twilight/cyan?icon=discord" alt="Built with twilight" /></a>
+<a href="https://polyformproject.org/licenses/noncommercial/1.0.0/"><img src="https://badgen.net/static/license/PolyForm%20Noncommercial/green" alt="Polyform non-commercial license" /></a>
+
+<img src="extras/bbDemo.webp" width="520" alt="Demo">
+</div>
 
 **BigBrother** is a continuous archiver for Discord servers. Instead of taking snapshots, it tracks the complete history of all server changes, creating a comprehensive local mirror that:
 1. Preserves the **full audit trail** of every modification, not just the current state.
@@ -26,7 +29,7 @@ This history to me is just as valuable as the message content itself, but there 
 *   **🖼️ Asset Mirroring**: Downloads attachments, avatars, emojis, stickers, and guild icons/banners in full quality.
 *   **📄 Append Log**: Data is *never* deleted or overwritten.
 *   **⚡ High Performance**: Your internet connection and storage I/O are the bottleneck, never the bot.
-*   **🛡️ Reliable**: Built like failure is not an option. See [RELIABILITY.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/RELIABILITY.md).
+*   **🛡️ Reliable**: Built like failure is not an option. See [RELIABILITY.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md).
 
 ---
 
@@ -39,7 +42,7 @@ This history to me is just as valuable as the message content itself, but there 
     * Server Members Intent
     * Message Content Intent
     * "View Channels" and "Read Message History" permissions on the server.
-    * If asset downloads don't work for you, you need to enable the Administrator permission. This is funny Discord behaviour, I couldn't figure out a way to bypass this.
+    * If asset downloads don't work for you, you need to enable the Administrator permission. This is a Discord quirk, I couldn't figure out a way to bypass this.
 
 ### Installation
 #### Manual
@@ -75,7 +78,7 @@ Big Brother is configured via `config.toml` or Environment Variables.
         export BIGBROTHER_DISCORD_TOKEN="your_bot_token_here"
         ```
 
-2. Set the `data_path` in `config.toml`. This is the location where the bot will store all the data. "./data" is the default.
+2. Set the `data_path` in `config.toml`. This is the location where the bot will store all the data.
 
 3.  Start the bot with the same command.   
 
@@ -85,7 +88,7 @@ Config changes will not take effect until restart.
 ---
 
 ## 🗄️ Data Storage
-See [DATA.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/DATA.md)
+See [DATA.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md)
 
 ---
 
