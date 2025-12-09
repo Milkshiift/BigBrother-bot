@@ -4,6 +4,11 @@
 [![Twilight](https://badgen.net/static/built%20with/twilight/cyan?icon=discord)](https://github.com/twilight-rs/twilight)
 [![Twilight](https://badgen.net/static/license/PolyForm%20Noncommercial/green)](https://polyformproject.org/licenses/noncommercial/1.0.0/)
 
+<p align="center">
+  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/DATA.md">Data Storage Docs</a> •
+  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/RELIABILITY.md">Reliability Docs</a>
+</p>
+
 **BigBrother** is a continuous archiver for Discord servers. Instead of taking snapshots, it tracks the complete history of all server changes, creating a comprehensive local mirror that:
 1. Preserves the **full audit trail** of every modification, not just the current state.
 2. Stays **continuously synchronized** with your server in real-time.
@@ -20,7 +25,7 @@ This history to me is just as valuable as the message content itself, but there 
 *   **💾 Metadata Log**: Saves every change to channels, members, roles, emojis, stickers, and the guild.
 *   **🖼️ Asset Mirroring**: Downloads attachments, avatars, emojis, stickers, and guild icons/banners in full quality.
 *   **📄 Append Log**: Data is *never* deleted or overwritten.
-*   **⚡ High Performance**: Your internet connection and storage I/O are the bottleneck, not the bot.
+*   **⚡ High Performance**: Your internet connection and storage I/O are the bottleneck, never the bot.
 *   **🛡️ Reliable**: Built like failure is not an option. See [RELIABILITY.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/RELIABILITY.md).
 
 ---
@@ -38,17 +43,12 @@ This history to me is just as valuable as the message content itself, but there 
 
 ### Installation
 #### Manual
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/Milkshiift/BigBrother-bot.git
-    cd BigBrother-bot
-    ```
-
-2.  Build and run the project to generate the default configuration:
-    ```bash
-    cargo run --release
-    ```
-    In case you need it, you can find the resulting binary at `./target/release/BigBrother`
+```bash
+git clone https://github.com/Milkshiift/BigBrother-bot.git
+cd BigBrother-bot
+cargo run --release
+```
+In case you need it, you can find the resulting binary at `./target/release/BigBrother`
 #### Nix
 Add flake to inputs:
 ```nix
@@ -90,5 +90,5 @@ See [DATA.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/DATA.md)
 ---
 
 ## Why is there no development history?
-The development of this project happened in a private repository over the course of ~1.5 years with more than 200 commits.
+The development of this project took place in a private repository over the course of ~1.5 years with more than 200 commits.
 As I initially did not intend for it to be public, the commit history has a bunch of tokens and other private information I would not like to share, so I created a new repository for a public release.
