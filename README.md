@@ -21,7 +21,7 @@ This history to me is just as valuable as the message content itself, but there 
 *   **🖼️ Asset Mirroring**: Downloads attachments, avatars, emojis, stickers, and guild icons/banners in full quality.
 *   **📄 Append Log**: Data is *never* deleted or overwritten.
 *   **⚡ High Performance**: Your internet connection and storage I/O are the bottleneck, not the bot.
-*   **🛡️ Reliable**: Built like failure is not an option. See RELIABILITY.md.
+*   **🛡️ Reliable**: Built like failure is not an option. See [RELIABILITY.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/RELIABILITY.md).
 
 ---
 
@@ -33,7 +33,8 @@ This history to me is just as valuable as the message content itself, but there 
 *   A [Discord Bot](https://discord.com/developers/applications) with:
     * Server Members Intent
     * Message Content Intent
-    * "View Channels" and "Read Message History" permissions on the server, *or* the Administrator permission (see Configuration).
+    * "View Channels" and "Read Message History" permissions on the server.
+    * If asset downloads don't work for you, you need to enable the Administrator permission. This is funny Discord behaviour, I couldn't figure out a way to bypass this.
 
 ### Installation
 #### Manual
@@ -76,16 +77,15 @@ Big Brother is configured via `config.toml` or Environment Variables.
 
 2. Set the `data_path` in `config.toml`. This is the location where the bot will store all the data. "./data" is the default.
 
-3.  (Optional) Fine-tune settings in `config.toml`. You can find option descriptions in TODO.
+3.  Start the bot with the same command.   
 
-4.  Start the bot with the same command.   
-
+You can find option descriptions [here](https://github.com/Milkshiift/BigBrother-bot/blob/main/src/settings.rs#L28).    
 Config changes will not take effect until restart.
 
 ---
 
 ## 🗄️ Data Storage
-See DATA.md
+See [DATA.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/DATA.md)
 
 ---
 
