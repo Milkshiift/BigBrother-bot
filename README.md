@@ -2,7 +2,7 @@
 <div align="center">
 <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/Rust-lang-000000.svg?style=flat&logo=rust" alt="Rust lang" /></a>
 <a href="https://github.com/twilight-rs/twilight"><img src="https://badgen.net/static/built%20with/twilight/cyan?icon=discord" alt="Built with twilight" /></a>
-<a href="https://polyformproject.org/licenses/noncommercial/1.0.0/"><img src="https://badgen.net/static/license/PolyForm%20Noncommercial/green" alt="Polyform non-commercial license" /></a>
+<a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/license-AGPL%20v3-green" alt="AGPL-3.0" /></a>
 </div>
 <br>
 
