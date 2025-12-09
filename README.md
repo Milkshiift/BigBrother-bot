@@ -1,16 +1,10 @@
 <h1 align="center">BigBrother 👁️</h1>
-
-<p align="center">
-  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md">Data Storage Docs</a> •
-  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md">Reliability Docs</a>
-</p>
 <div align="center">
 <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/Rust-lang-000000.svg?style=flat&logo=rust" alt="Rust lang" /></a>
 <a href="https://github.com/twilight-rs/twilight"><img src="https://badgen.net/static/built%20with/twilight/cyan?icon=discord" alt="Built with twilight" /></a>
 <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/"><img src="https://badgen.net/static/license/PolyForm%20Noncommercial/green" alt="Polyform non-commercial license" /></a>
-
-<img src="extras/bbDemo.webp" width="520" alt="Demo">
 </div>
+<br>
 
 **BigBrother** is a continuous archiver for Discord servers. Instead of taking snapshots, it tracks the complete history of all server changes, creating a comprehensive local mirror that:
 1. Preserves the **full audit trail** of every modification, not just the current state.
@@ -19,6 +13,14 @@
 ### Why I built this
 I created BigBrother for a server I share with friends that has evolved through quite a few "themes" (unified sets of server names, roles, member nicknames, etc.).
 This history to me is just as valuable as the message content itself, but there was previously no way to capture it, until now.
+
+<p align="center">
+  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md">Data Storage Docs</a> •
+  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md">Reliability Docs</a>
+</p>
+<div align="center">
+<img align="center" src="extras/bbDemo.webp" alt="Demo">
+</div>
 
 ---
 
