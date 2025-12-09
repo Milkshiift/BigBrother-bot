@@ -7,8 +7,8 @@
 <br>
 
 **BigBrother** is a continuous archiver for Discord servers. Instead of taking snapshots, it tracks the complete history of all server changes, creating a comprehensive local mirror that:
-1. Preserves the **full audit trail** of every modification, not just the current state.
-2. Stays **continuously synchronized** with your server in real-time.
+1. 📜 Preserves the **full audit trail** of every modification, not just the current state.
+2. 🔁 Stays **continuously synchronized** with your server in real-time.
 
 ### Why I built this
 I created BigBrother for a server I share with friends that has evolved through quite a few "themes" (unified sets of server names, roles, member nicknames, etc.).
