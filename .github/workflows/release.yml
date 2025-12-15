@@ -55,7 +55,7 @@ jobs:
           echo "Binary will be named for platform: ${PLATFORM_ID}"
 
       - name: Build
-        run: cargo build -Z build-std=std,panic_abort -Z build-std-features= --release --target ${{ env.TARGET_TRIPLE }}
+        run: cargo build -Z build-std=std,panic_abort -Z build-std-features= --cfg reqwest_unstable --release --target ${{ env.TARGET_TRIPLE }}
 
       - name: Prepare Release Assets
         shell: bash
