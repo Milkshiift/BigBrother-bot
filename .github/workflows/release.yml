@@ -55,7 +55,9 @@ jobs:
           echo "Binary will be named for platform: ${PLATFORM_ID}"
 
       - name: Build
-        run: RUSTFLAGS="--cfg reqwest_unstable -Zlocation-detail=none -Zfmt-debug=none -Zunstable-options -Cpanic=immediate-abort" cargo build -Z build-std=std,panic_abort -Z build-std-features= --release --target ${{ env.TARGET_TRIPLE }}
+        env:
+          RUSTFLAGS: "--cfg reqwest_unstable -Zlocation-detail=none -Zfmt-debug=none -Zunstable-options -Cpanic=immediate-abort"
+        run: cargo build -Z build-std=std,panic_abort -Z build-std-features= --release --target ${{ env.TARGET_TRIPLE }}
 
       - name: Prepare Release Assets
         shell: bash
