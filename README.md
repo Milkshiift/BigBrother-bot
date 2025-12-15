@@ -9,13 +9,10 @@
 **BigBrother** is a continuous archiver for Discord servers. Instead of taking snapshots, it tracks the complete history of all server changes, creating a comprehensive local mirror that:
 1. 📜 Preserves the **full audit trail** of every modification, not just the current state.
 2. 🔁 Stays **continuously synchronized** with your server in real-time.
-
-### Why I built this
-I created BigBrother for a server I share with friends that has evolved through quite a few "themes" (unified sets of server names, roles, member nicknames, etc.).
-This history to me is just as valuable as the message content itself, but there was previously no way to capture it, until now.
+3. 🔤 Is fully **plain-text** (NDJSON), and not behind a database.
 
 <div align="center">
-<img align="center" src="extras/bbDemo.webp" alt="Demo browsing a downloaded server using Yazi">
+<img align="center" src="extras/bbDemo.webp" alt="Demo browsing a downloaded server using Yazi" width="100%">
 </div>
 
 ## ✨ Key Features
@@ -82,6 +79,11 @@ Config changes will not take effect until restart.
 ## 🗄️ Data Storage
 See [DATA.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md)
 
-## Why is there no development history?
+## 📖 Background & FAQ
+### Why I built this
+I created BigBrother for a server I share with friends that has evolved through quite a few "themes" (unified sets of server names, roles, member nicknames, etc.).
+This history to me is just as valuable as the message content itself, but there was previously no way to capture it, until now.
+
+### Why is there no development history?
 The development of this project took place in a private repository over the course of ~1.5 years with more than 200 commits.
 As I initially did not intend for it to be public, the commit history has a bunch of tokens and other private information I would not like to share, so I created a new repository for a public release.

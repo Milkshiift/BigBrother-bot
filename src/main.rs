@@ -138,7 +138,7 @@ struct MessageOnlyVisitor<'a, W> {
 	result: std::fmt::Result,
 }
 
-impl<'a, W: std::fmt::Write> tracing::field::Visit for MessageOnlyVisitor<'a, W> {
+impl<W: std::fmt::Write> tracing::field::Visit for MessageOnlyVisitor<'_, W> {
 	fn record_debug(&mut self, field: &tracing::field::Field, value: &dyn std::fmt::Debug) {
 		if field.name() == "message" {
 			self.result = write!(self.writer, "{value:?}");
