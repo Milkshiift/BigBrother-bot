@@ -10,8 +10,11 @@ use std::sync::LazyLock;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Settings {
+	/// The root directory where all archived data, logs, and downloaded assets will be stored.
 	#[serde(default = "default_data_path")]
 	pub data_path: String,
+	/// The Discord Bot Token used for authentication.
+	/// Can also be provided via the `BIGBROTHER_DISCORD_TOKEN` environment variable.
 	#[serde(default)]
 	pub discord_token: String,
 	#[serde(default)]
@@ -26,29 +29,35 @@ pub struct Settings {
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Catchup {
-	/// Number of messages to fetch per Discord API request.
+	/// The number of messages to fetch from Discord per API request during catchup.
+	/// The API maximum is 100.
 	#[serde(default = "default_messages_per_request")]
 	pub messages_per_request: u16,
 
-	/// Number of messages to batch before writing to storage.
+	/// The number of messages to hold in memory before committing them to the disk log during catchup.
+	/// Higher values reduce disk I/O overhead during massive history syncs.
 	#[serde(default = "default_write_batch_size")]
 	pub write_batch_size: usize,
 
 	/// Maximum number of concurrent channel catchups.
+	/// The effect of this is inconclusive. A minimum recommended value is 4. Increasing will hit more rate limits.
+	/// If your catchups are shallow and wide (many channels but few unsaved messages), increasing this may make it faster.
 	#[serde(default = "default_channel_concurrency")]
 	pub channel_concurrency: usize,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Metadata {
-	/// Number of members to fetch per Discord API request during sync.
+	/// The number of members to fetch per API request when syncing the member list.
+	/// The API maximum is 1000.
 	#[serde(default = "default_member_fetch_limit")]
 	pub member_fetch_limit: u16,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Storage {
-	/// How often to flush the log buffer, in milliseconds.
+	/// How often to flush the log buffer to disk, in milliseconds.
+	/// In case of a power outage, unflushed data will be lost.
 	#[serde(default = "default_autoflush_interval_ms")]
 	pub autoflush_interval_ms: u64,
 }
@@ -56,6 +65,7 @@ pub struct Storage {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Network {
 	/// Timeout for network requests in seconds.
+	/// If you are dealing with big files and a slow internet connection, increasing this can help.
 	#[serde(default = "default_network_timeout")]
 	pub timeout: u64,
 
