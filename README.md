@@ -14,12 +14,8 @@
 I created BigBrother for a server I share with friends that has evolved through quite a few "themes" (unified sets of server names, roles, member nicknames, etc.).
 This history to me is just as valuable as the message content itself, but there was previously no way to capture it, until now.
 
-<p align="center">
-  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/DATA.md">Data Storage Docs</a> •
-  <a href="https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md">Reliability Docs</a>
-</p>
 <div align="center">
-<img align="center" src="extras/bbDemo.webp" alt="Demo">
+<img align="center" src="extras/bbDemo.webp" alt="Demo browsing a downloaded server using Yazi">
 </div>
 
 ## ✨ Key Features
@@ -29,7 +25,7 @@ This history to me is just as valuable as the message content itself, but there 
 *   **🖼️ Asset Mirroring**: Downloads attachments, avatars, emojis, stickers, and guild icons/banners in full quality.
 *   **📄 Append Log**: Data is *never* deleted or overwritten.
 *   **⚡ High Performance**: Your internet connection and storage I/O are the bottleneck, never the bot.
-*   **🛡️ Reliable**: Built like failure is not an option. See [RELIABILITY.md](https://github.com/Milkshiift/BigBrother-bot/blob/main/extras/RELIABILITY.md).
+*   **🛡️ Reliable**: Built like failure is not an option. Data continuity is sacred.
 
 ## 🚀 Getting Started
 
@@ -70,7 +66,7 @@ services.bigbrother = {
 Big Brother is configured via `config.toml` or Environment Variables.
 
 1.  Set your bot token with:
-    * A `discord_token` parameter in `config.toml`.
+    * The `discord_token` parameter in `config.toml`.
     * Or the environment variable (recommended):
         ```bash
         export BIGBROTHER_DISCORD_TOKEN="your_bot_token_here"
