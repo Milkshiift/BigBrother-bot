@@ -7,11 +7,11 @@ edition = "2024"
 tokio = { version = "1.48.0", features = ["macros", "signal"] }
 serde = "1.0.228"
 sonic-rs = "0.5.6"
-twilight-model = { version = "0.17.0" }
-twilight-gateway = { version = "0.17.0", features = ["simd-json", "zstd"] }
-twilight-cache-inmemory = { version = "0.17.0" }
-twilight-http = { version = "0.17.0", default-features = false, features = ["rustls-native-roots", "decompression", "simd-json", "hickory"] }
-reqwest = { version = "0.12.25", default-features = false, features = ["http3", "rustls-tls-native-roots", "stream", "hickory-dns"] }
+twilight-model = { version = "0.17.1" }
+twilight-gateway = { version = "0.17.1", features = ["simd-json", "zstd"] }
+twilight-cache-inmemory = { version = "0.17.1" }
+twilight-http = { version = "0.17.1", default-features = false, features = ["rustls-native-roots", "decompression", "simd-json", "hickory"] }
+reqwest = { version = "0.12.26", default-features = false, features = ["http3", "rustls-tls-native-roots", "stream", "hickory-dns"] }
 anyhow = "1.0.100"
 thiserror = "2.0.17"
 tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
