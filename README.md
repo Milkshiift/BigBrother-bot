@@ -12,7 +12,7 @@
 3. 🔤 Is fully **plain-text** (NDJSON), and not behind a database.
 
 <div align="center">
-<img align="center" src="extras/bbDemo.webp" alt="Demo browsing a downloaded server using Yazi" width="100%">
+<img align="center" src="extras/bbDemo.webp" alt="Demo browsing a downloaded server using Yazi">
 </div>
 
 ## ✨ Key Features
