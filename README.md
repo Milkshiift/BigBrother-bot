@@ -27,23 +27,46 @@
 ## 🚀 Getting Started
 
 ### Prerequisites
+For all installation options you will need a [Discord Bot](https://discord.com/developers/applications) with:
+* **Intents:** "Server Members" and "Message Content"
+* **Permissions:** "View Channels" and "Read Message History"
+* If asset downloads don't work for you, you need to enable the Administrator permission. This is a Discord quirk, I couldn't figure out a way to bypass this.
 
-*   [Rust](https://rust-lang.org/learn/get-started/) 
-*   A [Discord Bot](https://discord.com/developers/applications) with:
-    * Server Members Intent
-    * Message Content Intent
-    * "View Channels" and "Read Message History" permissions on the server.
-    * If asset downloads don't work for you, you need to enable the Administrator permission. This is a Discord quirk, I couldn't figure out a way to bypass this.
+### Installation options
+<details open>
+<summary>📦 From binary (easiest)</summary>
 
-### Installation
-#### Manual
+1. Download the executable from the [latest release](https://github.com/Milkshiift/BigBrother-bot/releases/latest).
+2. Run it in a terminal/console
+   - **Steps for Windows 🪟:**
+      - Hold Shift and right-click in the folder containing the executable.
+      - Click "Open PowerShell window here".
+      - Copy `BigBrother-x86_64-windows.exe` text and paste it into PowerShell by right-clicking, or type it out manually.
+      - Press Enter.
+3. See the [Configuration](#configuration) section.
+</details>
+
+<details>
+<summary>⚙️ Build from source</summary>
+
+Firstly, install [Rust](https://rust-lang.org/learn/get-started/).   
+Then clone the repository:
 ```bash
 git clone https://github.com/Milkshiift/BigBrother-bot.git
 cd BigBrother-bot
+```
+And run the bot:
+```bash
 cargo run --release
 ```
 In case you need it, you can find the resulting binary at `./target/release/BigBrother`
-#### Nix
+</details>
+
+
+<details>
+
+<summary>🔷 Nix</summary>
+
 Add flake to inputs:
 ```nix
 bigbrother.url = "github:Milkshiift/BigBrother-bot";
@@ -57,6 +80,8 @@ services.bigbrother = {
     # settings.storage.autoflushInterval = 60000;
 };
 ```
+
+</details>
 
 ### Configuration
 
