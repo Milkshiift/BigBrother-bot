@@ -33,7 +33,7 @@ For all installation options you will need a [Discord Bot](https://discord.com/d
 * If asset downloads don't work for you, you need to enable the Administrator permission. This is a Discord quirk, I couldn't figure out a way to bypass this.
 
 ### Installation options
-<details open>
+<details>
 <summary>📦 From binary (easiest)</summary>
 
 1. Download the executable from the [latest release](https://github.com/Milkshiift/BigBrother-bot/releases/latest).
